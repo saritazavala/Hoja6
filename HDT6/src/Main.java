@@ -37,7 +37,7 @@ public class Main {
 
         Scanner teclado = new Scanner(System.in);
 
-        
+
 
         if (seguir==true){
 
