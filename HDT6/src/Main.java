@@ -31,7 +31,7 @@ public class Main {
         Factory fac = new Factory<>();
         boolean seguir = false;
         boolean seguirx2 = false;
-        Map<String,String> todasLasCartas = null;
+        Map<String,String> todasLasCartasMapa = null;
         Map<String,String> cartasDelMen = null;
         ArrayList<String> ListaDeCartas = new ArrayList<String>();
 
@@ -58,9 +58,9 @@ public class Main {
                 seguir = true;
             }
 
-            for (String carta: ListaDeCartas){
-               carta.split("|");
-               //System.out.println(ListaDeCartas);
+            //ListaDeCartas
+            for (String linea: ListaDeCartas){
+                String[] keys = linea.split("|");
 
             }
         } catch (IOException e) {
@@ -81,7 +81,7 @@ public class Main {
 
 
             if (eleccion == 1){
-                todasLasCartas = fac.getMap("Hashmap");
+                todasLasCartasMapa = fac.getMap("Hashmap");
                 cartasDelMen = fac.getMap("Hashmap");
                 System.out.println(ListaDeCartas);
 
@@ -89,13 +89,13 @@ public class Main {
             }
 
             else if(eleccion==2){
-                todasLasCartas = fac.getMap("TreeMap");
+                todasLasCartasMapa = fac.getMap("TreeMap");
                 cartasDelMen = fac.getMap("TreeMap");
                 seguirx2 = true;
             }
 
             else if(eleccion==3){
-                todasLasCartas = fac.getMap("Linked");
+                todasLasCartasMapa = fac.getMap("Linked");
                 cartasDelMen = fac.getMap("Linked");
                 seguirx2 = true;
 
@@ -113,7 +113,7 @@ public class Main {
             int opcion = teclado.nextInt();
             teclado.nextLine();
             if (opcion==1){
-                System.out.println(todasLasCartas);
+                System.out.println(todasLasCartasMapa);
                 System.out.println("yey");
             }
 
@@ -133,5 +133,6 @@ https://es.stackoverflow.com/questions/71250/leer-varias-lineas-de-un-archivo-de
 Codigo para hacer el split
 https://www.tutorialspoint.com/java/java_string_split.htm
 https://es.stackoverflow.com/questions/45846/c%C3%B3mo-separar-un-string-en-java-c%C3%B3mo-utilizar-split
+https://www.geeksforgeeks.org/split-string-java-examples/
 
  */
