@@ -34,6 +34,7 @@ public class Factory<k,v> {
 Referencias
 Tutorialspoint. Design Pattern - Factory Pattern.
 https://www.tutorialspoint.com/design_pattern/factory_pattern.htm
+https://www.tutorialspoint.com/java/java_collections.htm
  */
 
 }
