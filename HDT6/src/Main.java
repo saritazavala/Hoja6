@@ -6,6 +6,7 @@ Estructura de Datos
 
 import java.io.*;
 import java.util.*;
+import java.util.Scanner;
 
 
  /* Es como en python? Habian Diccionarios tambien con keys y "definiciones"
@@ -17,11 +18,18 @@ import java.util.*;
         Debo Leer por linea por linea
 
         2. Crear listas
+        Splitear con el Signo | que los separa
+
+        3. Agregar a la lista la baraja entera y puedo separar en los keys y valores
+
          */
 
 public class Main {
     public static void main(String[] args){
         boolean seguir = false;
+        Scanner teclado = new Scanner(System.in);
+
+
 
         File file = new File("cards_desc.txt");
         FileReader fileR = null;
@@ -47,8 +55,23 @@ public class Main {
         }
 
 
-        while (seguir){
-            System.out.println("siu");
+        if (seguir==true){
+
+
+            System.out.println("Ingrese el tipo de Mapa que desea: ");
+            System.out.println("1. HashMap");
+            System.out.println("2.TreeMap");
+            System.out.println("3. LinkedHashMap");
+
+            int eleccion = teclado.nextInt();
+            teclado.nextLine();
+
+            if (eleccion == 1){
+                System.out.println("yey");
+            }
+
+
+
         }
 
 
