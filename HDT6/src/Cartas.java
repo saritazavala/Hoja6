@@ -6,8 +6,9 @@ Estructura de Datos
 
 import java.io.*;
 import java.util.*;
-public class Metodos {
+public class Cartas {
 
-    public Map<String, String> baraja;
+   
+
 
 }

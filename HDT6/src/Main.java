@@ -35,8 +35,8 @@ public class Main {
         Map<String,String> cartasDelMen = null;
         ArrayList<String> ListaDeCartas = new ArrayList<String>();
 
-
         Scanner teclado = new Scanner(System.in);
+
         File file = new File("cards_desc.txt");
         FileReader fileR = null;
         BufferedReader file2 = null;
@@ -59,10 +59,6 @@ public class Main {
             }
 
 
-            for (String linea: ListaDeCartas){
-                String[] keys = linea.split("|");
-
-            }
         } catch (IOException e) {
             e.printStackTrace();
         }
