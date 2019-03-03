@@ -8,7 +8,7 @@ import java.util.*;
 import java.util.Collections.*;
 
 
-public class Factory<k,v> {
+public class Factory {
     public Map getMap(String tipoMapa){
 
         if (tipoMapa== null){

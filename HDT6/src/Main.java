@@ -26,8 +26,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
+        Factory fac = new Factory();
         boolean seguir = false;
+        Map<String,String> todasLasCasrtas = null;
+        Map<String,String> cartasDelMen = null;
+
         Scanner teclado = new Scanner(System.in);
+
 
 
 
@@ -49,6 +54,7 @@ public class Main {
             while( ( lines = file2.readLine()) != null) {
                 System.out.println(lines);
                 seguir = true;
+
             }
         } catch (IOException e) {
             e.printStackTrace();
