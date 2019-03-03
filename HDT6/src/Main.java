@@ -22,7 +22,7 @@ import java.util.Scanner;
 
         3. Agregar a la lista la baraja entera y puedo separara por keys y values
 
-        3.1 no se si es mas facil meter todo y splitearlo hasat el signo de la barrita |
+        3.1 no se si es mas facil meter  y splitearlo hasta el signo de la barrita |
 
          */
 
@@ -58,7 +58,7 @@ public class Main {
                 seguir = true;
             }
 
-            //ListaDeCartas
+
             for (String linea: ListaDeCartas){
                 String[] keys = linea.split("|");
 
