@@ -20,7 +20,9 @@ import java.util.Scanner;
         2. Crear listas
         Splitear con el Signo | que los separa
 
-        3. Agregar a la lista la baraja entera y puedo separar en los keys y valores
+        3. Agregar a la lista la baraja entera y puedo separara por keys y values
+
+        3.1 no se si es mas facil meter todo y splitearlo hasat el signo de la barrita |
 
          */
 
@@ -35,8 +37,6 @@ public class Main {
 
 
         Scanner teclado = new Scanner(System.in);
-
-
         File file = new File("cards_desc.txt");
         FileReader fileR = null;
         BufferedReader file2 = null;
@@ -56,6 +56,11 @@ public class Main {
                 System.out.println(lines);
                 ListaDeCartas.add(lines);
                 seguir = true;
+            }
+
+            for (String carta: ListaDeCartas){
+               carta.split("|");
+               //System.out.println(ListaDeCartas);
 
             }
         } catch (IOException e) {
@@ -124,5 +129,9 @@ public class Main {
 Referencias:
 Leer el documento linea por linea:
 https://es.stackoverflow.com/questions/71250/leer-varias-lineas-de-un-archivo-de-texto-java
+
+Codigo para hacer el split
+https://www.tutorialspoint.com/java/java_string_split.htm
+https://es.stackoverflow.com/questions/45846/c%C3%B3mo-separar-un-string-en-java-c%C3%B3mo-utilizar-split
 
  */
