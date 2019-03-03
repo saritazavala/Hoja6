@@ -7,11 +7,7 @@ import java.io.*;
 import java.util.*;
 import java.util.Collections.*;
 
-/*
-Refenrencias
-Tutorialspoint. Design Pattern - Factory Pattern.
-https://www.tutorialspoint.com/design_pattern/factory_pattern.htm
- */
+
 public class Factory<k,v> {
     public Map getMap(String tipoMapa){
 
@@ -23,9 +19,21 @@ public class Factory<k,v> {
             return  new HashMap<>();
         }
 
+        if (tipoMapa.equalsIgnoreCase("TreeMap")){
+            return new TreeMap<>();
+        }
+
+        if (tipoMapa.equalsIgnoreCase("Linked")){
+            return new LinkedHashMap<>();
+        }
+
         return null;
     }
 
-
+/*
+Referencias
+Tutorialspoint. Design Pattern - Factory Pattern.
+https://www.tutorialspoint.com/design_pattern/factory_pattern.htm
+ */
 
 }
