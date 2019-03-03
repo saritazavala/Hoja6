@@ -8,22 +8,22 @@ import java.util.*;
 import java.util.Collections.*;
 
 
-public class Factory {
-    public Map getMap(String tipoMapa){
+public class Factory<k,v> {
+    public Map<k,v> getMap(String tipoMapa){
 
         if (tipoMapa== null){
             return  null;
         }
 
-        if (tipoMapa.equalsIgnoreCase("Hashmap")){
+        else if (tipoMapa.equalsIgnoreCase("Hashmap")){
             return  new HashMap<>();
         }
 
-        if (tipoMapa.equalsIgnoreCase("TreeMap")){
+        else if (tipoMapa.equalsIgnoreCase("TreeMap")){
             return new TreeMap<>();
         }
 
-        if (tipoMapa.equalsIgnoreCase("Linked")){
+        else if (tipoMapa.equalsIgnoreCase("Linked")){
             return new LinkedHashMap<>();
         }
 
