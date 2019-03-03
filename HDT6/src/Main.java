@@ -39,7 +39,7 @@ public class Main {
         try {
             String lines = "";
             while( ( lines = file2.readLine()) != null) {
-                //System.out.println(lines);
+                System.out.println(lines);
                 seguir = true;
             }
         } catch (IOException e) {
