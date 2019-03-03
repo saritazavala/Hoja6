@@ -28,9 +28,10 @@ public class Main {
     public static void main(String[] args){
         Factory fac = new Factory();
         boolean seguir = false;
-        Map<String,String> todasLasCasrtas = null;
+        Map<String,String> todasLasCartas = null;
         Map<String,String> cartasDelMen = null;
 
+        ArrayList<String> cartasGuapas = new ArrayList<String>();
         Scanner teclado = new Scanner(System.in);
 
 
@@ -55,6 +56,7 @@ public class Main {
                 System.out.println(lines);
                 seguir = true;
 
+
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -72,8 +74,22 @@ public class Main {
             int eleccion = teclado.nextInt();
             teclado.nextLine();
 
+
             if (eleccion == 1){
-                System.out.println("yey");
+                todasLasCartas = fac.getMap("Hashmap");
+                cartasDelMen = fac.getMap("Hashmap");
+                System.out.println("siiiu");
+            }
+
+            else if(eleccion==2){
+                todasLasCartas = fac.getMap("TreeMap");
+                cartasDelMen = fac.getMap("TreeMap");
+            }
+
+            else if(eleccion==3){
+                todasLasCartas = fac.getMap("Linked");
+                cartasDelMen = fac.getMap("Linked");
+
             }
 
 
