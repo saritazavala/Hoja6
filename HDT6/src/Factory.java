@@ -16,15 +16,15 @@ public class Factory<k,v> {
         }
 
         else if (tipoMapa.equalsIgnoreCase("Hashmap")){
-            return  new HashMap<>();
+            return  new HashMap<k,v>();
         }
 
         else if (tipoMapa.equalsIgnoreCase("TreeMap")){
-            return new TreeMap<>();
+            return new TreeMap<k,v>();
         }
 
         else if (tipoMapa.equalsIgnoreCase("Linked")){
-            return new LinkedHashMap<>();
+            return new LinkedHashMap<k,v>();
         }
 
         return null;
