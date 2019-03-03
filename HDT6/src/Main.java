@@ -26,16 +26,15 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
-        Factory fac = new Factory();
+        Factory fac = new Factory<>();
         boolean seguir = false;
         boolean seguirx2 = false;
         Map<String,String> todasLasCartas = null;
         Map<String,String> cartasDelMen = null;
+        ArrayList<String> ListaDeCartas = new ArrayList<String>();
 
-        ArrayList<String> cartasGuapas = new ArrayList<String>();
+
         Scanner teclado = new Scanner(System.in);
-
-
 
 
         File file = new File("cards_desc.txt");
@@ -55,8 +54,8 @@ public class Main {
             String lines = "";
             while( ( lines = file2.readLine()) != null) {
                 System.out.println(lines);
+                ListaDeCartas.add(lines);
                 seguir = true;
-
 
             }
         } catch (IOException e) {
@@ -79,7 +78,7 @@ public class Main {
             if (eleccion == 1){
                 todasLasCartas = fac.getMap("Hashmap");
                 cartasDelMen = fac.getMap("Hashmap");
-                System.out.println(todasLasCartas);
+                System.out.println(ListaDeCartas);
 
                 seguirx2 = true;
             }
@@ -96,6 +95,7 @@ public class Main {
                 seguirx2 = true;
 
             }
+
 
         if (seguirx2==true){
             System.out.println("1. Agregar carta nueva a tu baraja (usuario)");
@@ -116,11 +116,6 @@ public class Main {
 
         }
 
-
-
-
-
-
     }
 
 }
@@ -129,6 +124,5 @@ public class Main {
 Referencias:
 Leer el documento linea por linea:
 https://es.stackoverflow.com/questions/71250/leer-varias-lineas-de-un-archivo-de-texto-java
-
 
  */
