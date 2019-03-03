@@ -28,6 +28,7 @@ public class Main {
     public static void main(String[] args){
         Factory fac = new Factory();
         boolean seguir = false;
+        boolean seguirx2 = false;
         Map<String,String> todasLasCartas = null;
         Map<String,String> cartasDelMen = null;
 
@@ -78,21 +79,40 @@ public class Main {
             if (eleccion == 1){
                 todasLasCartas = fac.getMap("Hashmap");
                 cartasDelMen = fac.getMap("Hashmap");
-                System.out.println("siiiu");
+                System.out.println(todasLasCartas);
+
+                seguirx2 = true;
             }
 
             else if(eleccion==2){
                 todasLasCartas = fac.getMap("TreeMap");
                 cartasDelMen = fac.getMap("TreeMap");
+                seguirx2 = true;
             }
 
             else if(eleccion==3){
                 todasLasCartas = fac.getMap("Linked");
                 cartasDelMen = fac.getMap("Linked");
+                seguirx2 = true;
 
             }
 
+        if (seguirx2==true){
+            System.out.println("1. Agregar carta nueva a tu baraja (usuario)");
+            System.out.println("2. Mostrar el tipo de una carta específica");
+            System.out.println("3. Mostrar el nombre, tipo y cantidad de cada carta que el usuario tiene en su colección.");
+            System.out.println("4. Mostrar el nombre, tipo y cantidad de cada carta que el usuario tiene en su colección, ordenadas por tipo.");
+            System.out.println("5. Mostrar el nombre y tipo de todas las cartas existentes.");
+            System.out.println("6. Mostrar el nombre y tipo de todas las cartas existentes, ordenadas por tipo.");
 
+            int opcion = teclado.nextInt();
+            teclado.nextLine();
+            if (opcion==1){
+                System.out.println(todasLasCartas);
+                System.out.println("yey");
+            }
+
+        }
 
         }
 
