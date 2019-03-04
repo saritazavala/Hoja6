@@ -4,12 +4,15 @@ Hoja de Trabajo 6
 Estructura de Datos
  */
 
+import sun.security.smartcardio.SunPCSC;
+
 import java.io.*;
 import java.util.*;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
 
         String[] Archivo = Lector.leerArchivo();
         String[] comparador = new String[2];
@@ -34,6 +37,27 @@ public class Main {
         System.out.println("1. Hashmap");
         System.out.println("2. Treemap");
         System.out.println("3. Linked");
+
+        String opcion = teclado.nextLine();
+
+        if(opcion.equals(1)){
+            cartasUsuario = fac.getMap("Hashmap");
+        }
+
+        else if(opcion.equals(2)){
+            cartasUsuario = fac.getMap("TreeMap");
+        }
+        else if (opcion.equals(3)){
+            cartasUsuario = fac.getMap("Linked");
+        }
+        else{
+            return;
+        }
+
+
+
+
+
 
 
 
