@@ -61,6 +61,7 @@ public class Main {
             System.out.println("5.Mostrar el nombre y tipo de todas las cartas existentes.");
             System.out.println("6.Mostrar el nombre y tipo de todas las cartas existentes, ordenadas por tipo");
             System.out.println("7. Mostar elementos para profiler");
+            System.out.println("8. Salir");
 
             String seleccion = leer.nextLine();
             boolean existe = false;
@@ -111,6 +112,9 @@ public class Main {
 
             else if(seleccion.equals("7")){
                 MostrarElementosProfiler.mostrarElementos(cartasTotal);
+            }
+            else if(seleccion.equals("8")){
+                break;
             }
 
         }
