@@ -8,93 +8,54 @@ import java.io.*;
 import java.util.*;
 import java.util.Scanner;
 
-
- /* Es como en python? Habian Diccionarios tambien con keys y "definiciones"
-        Can relate them.
-
-        1. Leer el archivo.
-        NOMBRE|TIPO DE CARTA
-
-        Debo Leer por linea por linea
-
-        2. Crear listas
-        Splitear con el Signo | que los separa
-
-        3. Agregar a la lista la baraja entera y puedo separara por keys y values
-
-        3.1 no se si es mas facil meter  y splitearlo hasta el signo de la barrita |
-
-         */
-
 public class Main {
-    public static void main(String[] args){
-        Factory fac = new Factory<>();
-        boolean seguir = false;
-        boolean seguirx2 = false;
-        Map<String,String> todasLasCartasMapa = null;
-        Map<String,String> cartasDelMen = null;
-        ArrayList<String> ListaDeCartas = new ArrayList<String>();
+    public static void main(String[] args) {
 
-        Scanner teclado = new Scanner(System.in);
+        String[] Archivo = Lector.leerArchivo();
+        String[] comparador = new String[2];
+        Cartas[] cartas = new Cartas[Archivo.length];
+        Factory<String,String> fac = new Factory<>();
+        Map<String,String> cartasUsuario = null;
 
-
-
-        if (seguir==true){
-
-
-            System.out.println("Ingrese el tipo de Mapa que desea: ");
-            System.out.println("1. HashMap");
-            System.out.println("2.TreeMap");
-            System.out.println("3. LinkedHashMap");
-
-            int eleccion = teclado.nextInt();
-            teclado.nextLine();
-
-
-            if (eleccion == 1){
-                todasLasCartasMapa = fac.getMap("Hashmap");
-                cartasDelMen = fac.getMap("Hashmap");
-                System.out.println(ListaDeCartas);
-
-                seguirx2 = true;
-            }
-
-            else if(eleccion==2){
-                todasLasCartasMapa = fac.getMap("TreeMap");
-                cartasDelMen = fac.getMap("TreeMap");
-                seguirx2 = true;
-            }
-
-            else if(eleccion==3){
-                todasLasCartasMapa = fac.getMap("Linked");
-                cartasDelMen = fac.getMap("Linked");
-                seguirx2 = true;
-
-            }
-
-
-        if (seguirx2==true){
-            System.out.println("1. Agregar carta nueva a tu baraja (usuario)");
-            System.out.println("2. Mostrar el tipo de una carta específica");
-            System.out.println("3. Mostrar el nombre, tipo y cantidad de cada carta que el usuario tiene en su colección.");
-            System.out.println("4. Mostrar el nombre, tipo y cantidad de cada carta que el usuario tiene en su colección, ordenadas por tipo.");
-            System.out.println("5. Mostrar el nombre y tipo de todas las cartas existentes.");
-            System.out.println("6. Mostrar el nombre y tipo de todas las cartas existentes, ordenadas por tipo.");
-
-            int opcion = teclado.nextInt();
-            teclado.nextLine();
-            if (opcion==1){
-                System.out.println(todasLasCartasMapa);
-                System.out.println("yey");
-            }
+        for (int i = 0; i <cartas.length ; i++) {
+            cartas[i] = new Cartas();
 
         }
 
+
+        for (int i = 0; i <Archivo.length ; i++) {
+            comparador = Archivo[i].split("\\|");
+            cartas[i].setKey(comparador[0]);
+            cartas[i].setValue(comparador[1]);
+
         }
+
+        System.out.println("Ingrese el tipo de Map que desea");
+        System.out.println("1. Hashmap");
+        System.out.println("2. Treemap");
+        System.out.println("3. Linked");
+
+
+
+        for (int i = 0; i <cartas.length ; i++) {
+            System.out.println(cartas[i].getKey()+"-"+cartas[i].getValue());
+        }
+
+        System.out.println("Existen"+cartas.length+ "cartas");
+
+
+
 
     }
-
 }
+
+
+
+
+
+
+
+
 
 /*
 Referencias:

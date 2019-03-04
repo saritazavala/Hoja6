@@ -24,9 +24,7 @@ public class Lector {
         try {
             String lines = "";
             while( ( lines = file2.readLine()) != null) {
-                System.out.println(lines);
                 listaDeCartas[contador] = lines;
-                seguir = true;
                 contador++;
             }
 
