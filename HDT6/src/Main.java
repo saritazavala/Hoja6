@@ -3,7 +3,7 @@ Hoja de Trabajo 6
 03 de Marzo de 2019
 Estructura de Datos
  */
-
+//Referencias hasta abajo
 import java.io.*;
 import java.util.*;
 import java.util.Scanner;
@@ -95,11 +95,14 @@ public class Main {
             else if(seleccion.equals("3")){
 
                System.out.println(usuario.mostrarCartas());
-                System.out.println("El usuario tiene: " + usuario.getCantidadCartas() + " cartas");
+               System.out.println("El usuario tiene: " + usuario.getCantidadCartas() + " cartas");
+               System.out.println(usuario.getCantidadTiposCartas());
+
             }
             //Si la opcion es la 4
             else if(seleccion.equals("4")){
                 usuario.mostrarCartasOrdenadas();
+                System.out.println(usuario.getCantidadTiposCartas());
             }
 
             //Si la opcion es la 5
@@ -140,5 +143,5 @@ Codigo para hacer el split
 https://www.tutorialspoint.com/java/java_string_split.htm
 https://es.stackoverflow.com/questions/45846/c%C3%B3mo-separar-un-string-en-java-c%C3%B3mo-utilizar-split
 https://www.geeksforgeeks.org/split-string-java-examples/
-
+https://geekytheory.com/como-leer-un-fichero-en-java
  */

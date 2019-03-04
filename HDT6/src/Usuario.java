@@ -13,6 +13,9 @@ public class Usuario<E> {
     private int cantidadCartas;
     private Map cartas;
     Cartas[] cartitas = new Cartas[8861];
+    private int monstruos;
+    private int hechizos;
+    private int trampa;
 
 
     //Constructor
@@ -50,6 +53,13 @@ public class Usuario<E> {
         for(Object values: cartas.values()){
             cartitas[contador2].setValue((String) values);
             contador2++;
+            if(values.toString().equals("Monstruo")){
+                monstruos++;
+            }else if(values.toString().equals("Hechizo")){
+                hechizos++;
+            }else if(values.toString().equals("Trampa")){
+                trampa++;
+            }
         }
 
         this.cantidadCartas = cartas.size();
@@ -67,7 +77,9 @@ public class Usuario<E> {
         return (String) cartas.get(nombre);
     }
 
-
+    public String getCantidadTiposCartas(){
+        return hechizos + " Hehizos\n" +  monstruos + " Monstruos\n" + trampa + " Trampas";
+    }
 
 
 }

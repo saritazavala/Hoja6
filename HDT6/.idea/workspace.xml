@@ -27,10 +27,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="125" column="30" selection-start-line="125" selection-start-column="30" selection-end-line="125" selection-end-column="30" />
+            <state relative-caret-position="243">
+              <caret line="145" column="52" selection-start-line="145" selection-start-column="52" selection-end-line="145" selection-end-column="52" />
               <folding>
-                <element signature="e#0#3709#0" expanded="true" />
+                <element signature="e#0#5926#0" expanded="true" />
                 <element signature="imports" expanded="true" />
                 <element signature="e#4066#4082#0" expanded="true" />
               </folding>
@@ -68,8 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Usuario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="42" column="25" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+            <state relative-caret-position="289">
+              <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
               <folding>
                 <element signature="e#0#1886#0" expanded="true" />
                 <element signature="e#826#843#0" expanded="true" />
@@ -85,7 +85,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Cartas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="-44">
               <caret line="10" column="64" selection-start-line="10" selection-start-column="64" selection-end-line="10" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -105,7 +105,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cards_desc.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-149698" />
+            <state relative-caret-position="-149596" />
           </provider>
         </entry>
       </file>
@@ -128,8 +128,8 @@
         <option value="$PROJECT_DIR$/src/Factory.java" />
         <option value="$PROJECT_DIR$/src/MostrarElementosProfiler.java" />
         <option value="$PROJECT_DIR$/src/Lector.java" />
-        <option value="$PROJECT_DIR$/src/Usuario.java" />
         <option value="$PROJECT_DIR$/src/Cartas.java" />
+        <option value="$PROJECT_DIR$/src/Usuario.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
@@ -167,7 +167,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551673657887" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551674297360" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
@@ -218,8 +218,8 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14977308" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49881235" visible="true" weight="0.14977308" />
+      <window_info id="Structure" order="1" sideWeight="0.5011876" side_tool="true" visible="true" weight="0.14977308" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="JProfiler" />
       <window_info anchor="bottom" id="Terminal" />
@@ -227,7 +227,7 @@
       <window_info anchor="bottom" id="Messages" weight="0.3137255" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.1879085" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3120915" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869282" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -272,11 +272,6 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/cards_desc.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-149698" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MostrarElementosProfiler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -285,6 +280,24 @@
             <element signature="e#0#306#0" expanded="true" />
             <element signature="e#115#116#0" expanded="true" />
             <element signature="e#151#152#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/jre/lib/rt.jar!/java/util/function/Consumer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Factory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#109#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -300,31 +313,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/jre/lib/rt.jar!/java/util/function/Consumer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Usuario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="42" column="25" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#1886#0" expanded="true" />
-            <element signature="e#826#843#0" expanded="true" />
-            <element signature="e#409#410#0" expanded="true" />
-            <element signature="e#446#447#0" expanded="true" />
-            <element signature="e#499#500#0" expanded="true" />
-            <element signature="e#549#550#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Cartas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="-44">
           <caret line="10" column="64" selection-start-line="10" selection-start-column="64" selection-end-line="10" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -340,23 +331,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Factory.java">
+    <entry file="file://$PROJECT_DIR$/src/cards_desc.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        <state relative-caret-position="-149596" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Usuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
           <folding>
-            <element signature="e#0#109#0" expanded="true" />
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#1886#0" expanded="true" />
+            <element signature="e#826#843#0" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#446#447#0" expanded="true" />
+            <element signature="e#499#500#0" expanded="true" />
+            <element signature="e#549#550#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="125" column="30" selection-start-line="125" selection-start-column="30" selection-end-line="125" selection-end-column="30" />
+        <state relative-caret-position="243">
+          <caret line="145" column="52" selection-start-line="145" selection-start-column="52" selection-end-line="145" selection-end-column="52" />
           <folding>
-            <element signature="e#0#3709#0" expanded="true" />
+            <element signature="e#0#5926#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#4066#4082#0" expanded="true" />
           </folding>
