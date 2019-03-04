@@ -23,7 +23,7 @@ public class Factory<k,v> {
             return new TreeMap<k,v>();
         }
 
-        else if (tipoMapa.equalsIgnoreCase("Linked")){
+        else if (tipoMapa.equalsIgnoreCase("")){
             return new LinkedHashMap<k,v>();
         }
 

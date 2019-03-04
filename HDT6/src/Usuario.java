@@ -4,34 +4,53 @@ Hoja de Trabajo 6
 Estructura de Datos
  */
 
-import java.io.*;
-import java.util.*;
+import java.util.Map;
+
 public class Usuario<E> {
+    private int cantidadCartas;
+    private Map cartas;
+    Cartas[] cartitas = new Cartas[8861];
 
-    private  Map cartas;
 
-    //ATRIBUTO
-    private int cantidadDeCartas;
-
-    //METODOS PARA EL USUARIO
-
+    //Constructor
+    public Usuario(){
+        for (int i = 0; i < 8861 ; i++) {
+            cartitas[i] = new Cartas();
+        }
+    }
 
     public String mostrarCartas(){
-        return "";
+        String cartas = "";
+        for (int i = 0; i < this.cartas.size() ; i++) {
+            cartas += "Nombre: " +  cartitas[i].getKey() + " - " + "Tipo: " + cartitas[i].getValue() + "\n";
+        }
+        cartas += "\nEl Usuario tiene: " + this.cantidadCartas + " cartas";
+        return cartas;
     }
 
+    public void agregarCartas(Map cartas){
+        this.cartas = cartas;
+        int contador = 0;
+        int contador2 = 0;
+        for(Object keys : cartas.keySet()){
+            cartitas[contador].setKey((String) keys);
+            contador++;
+        }
 
-    public void AgregarCartas(Map cartas){
-        cartas = this.cartas;
+        for(Object values: cartas.values()){
+            cartitas[contador2].setValue((String) values);
+            contador2++;
+        }
 
+        this.cantidadCartas = cartas.size();
     }
 
-    public void setCantidadDeCartas(){
+    public void setCantidadCartas(){
 
     }
 
     public int getCantidadCartas(){
-    return 0;
+        return cantidadCartas;
     }
 
     public String mostrarTipoCarta(String nombre) {

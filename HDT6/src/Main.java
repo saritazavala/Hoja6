@@ -4,91 +4,96 @@ Hoja de Trabajo 6
 Estructura de Datos
  */
 
-import sun.security.smartcardio.SunPCSC;
+
 
 import java.io.*;
 import java.util.*;
 import java.util.Scanner;
+import java.util.Map;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
-
-        String[] Archivo = Lector.leerArchivo();
+    public static void main(String[] args){
+        String[] archivo = Lector.leerArchivo();
         String[] comparador = new String[2];
-        Cartas[] cartas = new Cartas[Archivo.length];
-        Factory<String, String> fac = new Factory<>();
+        Factory<String, String> factory = new Factory<>();
         Map<String, String> cartasUsuario = null;
+        Scanner leer = new Scanner(System.in);
+        Cartas[] cartas = new Cartas[archivo.length];
         Usuario<Cartas> usuario = new Usuario<>();
 
 
         for (int i = 0; i < cartas.length; i++) {
             cartas[i] = new Cartas();
-
         }
 
-
-        for (int i = 0; i < Archivo.length; i++) {
-            comparador = Archivo[i].split("\\|");
+        for (int i = 0; i < archivo.length ; i++) {
+            comparador = archivo[i].split("\\|");
             cartas[i].setKey(comparador[0]);
             cartas[i].setValue(comparador[1]);
-
         }
 
-        System.out.println("Ingrese el tipo de Map que desea");
-        System.out.println("1. Hashmap");
-        System.out.println("2. Treemap");
-        System.out.println("3. Linked");
+        System.out.println("Seleccione el Map deseado: ");
+        System.out.println("1.HashMap");
+        System.out.println("2.TreeMap");
+        System.out.println("3.LinkedMap");
+        String mapaSeleccionado = leer.nextLine();
 
-        String opcion = teclado.nextLine();
-
-        if (opcion.equals("1")) {
-            cartasUsuario = fac.getMap("Hashmap");
-
-        } else if (opcion.equals("2")) {
-            cartasUsuario = fac.getMap("TreeMap");
-        } else if (opcion.equals("3")) {
-            cartasUsuario = fac.getMap("Linked");
-        } else {
+        if(mapaSeleccionado.equals("1")){
+            cartasUsuario = factory.getMap("HashMap");
+        }else if(mapaSeleccionado.equals("2")){
+            cartasUsuario = factory.getMap("TreeMap");
+        }else if(mapaSeleccionado.equals("3")){
+            cartasUsuario = factory.getMap("Linked");
+        }else{
             return;
         }
 
-        System.out.println("1. Agregar carta nueva a tu baraja (usuario)");
-        System.out.println("2. Mostrar el tipo de una carta específica");
-        System.out.println("3. Mostrar el nombre, tipo y cantidad de cada carta que el usuario tiene en su colección.");
-        System.out.println("4. Mostrar el nombre, tipo y cantidad de cada carta que el usuario tiene en su colección, ordenadas por tipo.");
-        System.out.println("5. Mostrar el nombre y tipo de todas las cartas existentes.");
-        System.out.println("6. Mostrar el nombre y tipo de todas las cartas existentes, ordenadas por tipo.");
-
-        String eleccion = teclado.nextLine();
-        boolean existe = false;
         while (true) {
-            if (eleccion.equals("1")) {
-                System.out.println("Ingrese la carta a agregar");
-                String ingresar = teclado.nextLine();
+            System.out.println("1.Ingresar una carta");
+            System.out.println("2.Mostrar el tipo de carta");
+            System.out.println("3.Mostrar el nombre, tipo y cantidad de cada carta que el usuario tiene en su colección");
+            System.out.println("4.Mostrar el nombre, tipo y cantidad de cada carta que el usuario tiene en su colección, ordenadas por tipo");
+            System.out.println("5.Mostrar el nombre y tipo de todas las cartas existentes.");
+            System.out.println("6.Mostrar el nombre y tipo de todas las cartas existentes, ordenadas por tipo");
 
+            String seleccion = leer.nextLine();
+            boolean existe = false;
+
+            if (seleccion.equals("1")) {
+                System.out.println("Ingrese la carta");
+                String ingreso = leer.nextLine();
                 for (int i = 0; i < cartas.length; i++) {
-                    if (cartas[i].getKey().equals(ingresar)) {
+                    if (cartas[i].getKey().equals(ingreso)) {
                         existe = true;
-                        cartasUsuario.put(ingresar, cartas[i].getValue());
-                        usuario.AgregarCartas(cartasUsuario);
+                        cartasUsuario.put(cartas[i].getKey(), cartas[i].getValue());
+                        usuario.agregarCartas(cartasUsuario);
                     }
                 }
-                if (existe == false) {
-                    System.out.println("No existe la carta");
+                if(existe == false){
+                    System.out.println("La carta no existe, no puede ser agregada");
                 }
-
-            } else if (eleccion.equals("2")) {
-                System.out.println("Ingrese carta para saber el tipo");
-                String tipo = teclado.nextLine();
-                usuario.mostrarTipoCarta(tipo);
-
+            }
+            else if(seleccion.equals("2")){
+                System.out.println("Ingrese la carta que desea saber el tipo: ");
+                String carta = leer.nextLine();
+                System.out.println(usuario.mostrarTipoCarta(carta));
             }
 
+            else if(seleccion.equals("3")){
 
+               System.out.println(usuario.mostrarCartas());
+
+
+            }
+            /*
+            for (int i = 0; i < cartas.length; i++) {
+                System.out.println(cartas[i].getKey() + " - " + cartas[i].getValue());
+            }
+            System.out.println("Existen: " + cartas.length);*/
         }
     }
 }
+
 
 
 
