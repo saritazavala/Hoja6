@@ -19,6 +19,9 @@ public class Main {
         Cartas[] cartas = new Cartas[Archivo.length];
         Factory<String,String> fac = new Factory<>();
         Map<String,String> cartasUsuario = null;
+        Usuario<Cartas> usuario = new Usuario<>();
+
+
 
         for (int i = 0; i <cartas.length ; i++) {
             cartas[i] = new Cartas();
@@ -42,6 +45,7 @@ public class Main {
 
         if(opcion.equals(1)){
             cartasUsuario = fac.getMap("Hashmap");
+
         }
 
         else if(opcion.equals(2)){
@@ -54,20 +58,41 @@ public class Main {
             return;
         }
 
+        System.out.println("1. Agregar carta nueva a tu baraja (usuario)");
+        System.out.println("2. Mostrar el tipo de una carta específica");
+        System.out.println("3. Mostrar el nombre, tipo y cantidad de cada carta que el usuario tiene en su colección.");
+        System.out.println("4. Mostrar el nombre, tipo y cantidad de cada carta que el usuario tiene en su colección, ordenadas por tipo.");
+        System.out.println("5. Mostrar el nombre y tipo de todas las cartas existentes.");
+        System.out.println("6. Mostrar el nombre y tipo de todas las cartas existentes, ordenadas por tipo.");
+
+        String eleccion = teclado.nextLine();
+        boolean existe = false;
+        while (true) {
+            if (eleccion.equals(1)) {
+                System.out.println("Ingrese la carta a agregar");
+                String ingresar = teclado.nextLine();
+
+                for (int i = 0; i < cartas.length; i++) {
+                    if (cartas[i].getKey().equals(ingresar)) {
+                        existe = true;
+                        cartasUsuario.put(ingresar,cartas[i].getValue());
+                        usuario.AgregarCartas(cartasUsuario);
+                    }
+                }
+                if (existe==false){
+                    System.out.println("No existe la carta");
+                }
+
+            }
 
 
+            for (int i = 0; i < cartas.length; i++) {
+                System.out.println(cartas[i].getKey() + "-" + cartas[i].getValue());
+            }
 
+            System.out.println("Existen" + cartas.length + "cartas");
 
-
-
-
-        for (int i = 0; i <cartas.length ; i++) {
-            System.out.println(cartas[i].getKey()+"-"+cartas[i].getValue());
         }
-
-        System.out.println("Existen"+cartas.length+ "cartas");
-
-
 
 
     }

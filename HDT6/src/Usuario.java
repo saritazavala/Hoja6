@@ -6,7 +6,10 @@ Estructura de Datos
 
 import java.io.*;
 import java.util.*;
-public class Usuario<k,v> {
+public class Usuario<E> {
+
+    private  Map cartas;
+
     //ATRIBUTO
     private int cantidadDeCartas;
 
@@ -18,7 +21,8 @@ public class Usuario<k,v> {
     }
 
 
-    public void AgregarCartas(){
+    public void AgregarCartas(Map cartas){
+        cartas = this.cartas;
 
     }
 
