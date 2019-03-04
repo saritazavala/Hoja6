@@ -20,6 +20,7 @@ public class Main {
         Scanner leer = new Scanner(System.in);
         Cartas[] cartas = new Cartas[archivo.length];
         Usuario<Cartas> usuario = new Usuario<>();
+        Map<String,String> cartasTotal = null;
 
 
         for (int i = 0; i < cartas.length; i++) {
@@ -47,6 +48,10 @@ public class Main {
         }else{
             return;
         }
+        cartasTotal = cartasUsuario;
+        for (int i = 0; i < archivo.length; i++) {
+            cartasTotal.put(cartas[i].getKey(), cartas[i].getValue());
+        }
 
         while (true) {
             System.out.println("1.Ingresar una carta");
@@ -55,6 +60,7 @@ public class Main {
             System.out.println("4.Mostrar el nombre, tipo y cantidad de cada carta que el usuario tiene en su colección, ordenadas por tipo");
             System.out.println("5.Mostrar el nombre y tipo de todas las cartas existentes.");
             System.out.println("6.Mostrar el nombre y tipo de todas las cartas existentes, ordenadas por tipo");
+            System.out.println("7. Mostar elementos para profiler");
 
             String seleccion = leer.nextLine();
             boolean existe = false;
@@ -96,7 +102,15 @@ public class Main {
             }
 
             else if(seleccion.equals("6")){
-                
+                cartasTotal.entrySet().stream()
+                        .sorted(Map.Entry.<String, String>comparingByValue())
+                        .limit(8861)
+                        .forEach(System.out::println);
+                System.out.println("Existen: " + cartas.length + " Cartas");
+            }
+
+            else if(seleccion.equals("7")){
+                MostrarElementosProfiler.mostrarElementos(cartasTotal);
             }
 
         }
