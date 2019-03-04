@@ -7,7 +7,7 @@ import java.io.*;
 import java.util.*;
 import java.util.Collections.*;
 
-
+//Factory para cada clase de Map
 public class Factory<k,v> {
     public Map<k,v> getMap(String tipoMapa){
 

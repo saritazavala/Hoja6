@@ -1,7 +1,16 @@
 
-
+/*Sara Zavala 18893
+Hoja de Trabajo 6
+03 de Marzo de 2019
+Estructura de Datos
+ */
 import java.io.*;
 import java.util.*;
+
+//Clase para leer un documento
+//Este codigo bue basado en el encontrado en la siguiente pagina web
+//https://geekytheory.com/como-leer-un-fichero-en-java
+//https://es.stackoverflow.com/questions/71250/leer-varias-lineas-de-un-archivo-de-texto-java
 public class Lector {
 
     public static String[] leerArchivo(){

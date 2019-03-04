@@ -6,6 +6,9 @@ Estructura de Datos
 
 import java.io.*;
 import java.util.*;
+
+//Objeto Cartas
+//Se crean los sets y gets para las llaves y valores que este tendrá
 public class Cartas {
 
     //Atributo

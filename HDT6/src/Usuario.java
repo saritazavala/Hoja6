@@ -4,6 +4,9 @@ Hoja de Trabajo 6
 Estructura de Datos
  */
 // Referencia: Codigo recuperado de: https://stackoverflow.com/questions/29567575/sort-map-by-value-using-lambdas-and-streams
+
+//Esta clase es para crear un objeto que contega objetos tipo Cartas
+//y para manejarlas mediante un map
 import java.util.Map;
 
 public class Usuario<E> {
