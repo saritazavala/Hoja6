@@ -17,19 +17,18 @@ public class Main {
         String[] Archivo = Lector.leerArchivo();
         String[] comparador = new String[2];
         Cartas[] cartas = new Cartas[Archivo.length];
-        Factory<String,String> fac = new Factory<>();
-        Map<String,String> cartasUsuario = null;
+        Factory<String, String> fac = new Factory<>();
+        Map<String, String> cartasUsuario = null;
         Usuario<Cartas> usuario = new Usuario<>();
 
 
-
-        for (int i = 0; i <cartas.length ; i++) {
+        for (int i = 0; i < cartas.length; i++) {
             cartas[i] = new Cartas();
 
         }
 
 
-        for (int i = 0; i <Archivo.length ; i++) {
+        for (int i = 0; i < Archivo.length; i++) {
             comparador = Archivo[i].split("\\|");
             cartas[i].setKey(comparador[0]);
             cartas[i].setValue(comparador[1]);
@@ -43,18 +42,14 @@ public class Main {
 
         String opcion = teclado.nextLine();
 
-        if(opcion.equals(1)){
+        if (opcion.equals("1")) {
             cartasUsuario = fac.getMap("Hashmap");
 
-        }
-
-        else if(opcion.equals(2)){
+        } else if (opcion.equals("2")) {
             cartasUsuario = fac.getMap("TreeMap");
-        }
-        else if (opcion.equals(3)){
+        } else if (opcion.equals("3")) {
             cartasUsuario = fac.getMap("Linked");
-        }
-        else{
+        } else {
             return;
         }
 
@@ -68,33 +63,30 @@ public class Main {
         String eleccion = teclado.nextLine();
         boolean existe = false;
         while (true) {
-            if (eleccion.equals(1)) {
+            if (eleccion.equals("1")) {
                 System.out.println("Ingrese la carta a agregar");
                 String ingresar = teclado.nextLine();
 
                 for (int i = 0; i < cartas.length; i++) {
                     if (cartas[i].getKey().equals(ingresar)) {
                         existe = true;
-                        cartasUsuario.put(ingresar,cartas[i].getValue());
+                        cartasUsuario.put(ingresar, cartas[i].getValue());
                         usuario.AgregarCartas(cartasUsuario);
                     }
                 }
-                if (existe==false){
+                if (existe == false) {
                     System.out.println("No existe la carta");
                 }
 
+            } else if (eleccion.equals("2")) {
+                System.out.println("Ingrese carta para saber el tipo");
+                String tipo = teclado.nextLine();
+                usuario.mostrarTipoCarta(tipo);
+
             }
 
-
-            for (int i = 0; i < cartas.length; i++) {
-                System.out.println(cartas[i].getKey() + "-" + cartas[i].getValue());
-            }
-
-            System.out.println("Existen" + cartas.length + "cartas");
 
         }
-
-
     }
 }
 

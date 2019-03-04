@@ -34,6 +34,10 @@ public class Usuario<E> {
     return 0;
     }
 
+    public String mostrarTipoCarta(String nombre) {
+        return (String) cartas.get(nombre);
+    }
+
 
 
 }
