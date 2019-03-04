@@ -3,7 +3,7 @@ Hoja de Trabajo 6
 03 de Marzo de 2019
 Estructura de Datos
  */
-
+// Referencia: Codigo recuperado de: https://stackoverflow.com/questions/29567575/sort-map-by-value-using-lambdas-and-streams
 import java.util.Map;
 
 public class Usuario<E> {
@@ -26,6 +26,13 @@ public class Usuario<E> {
         }
         cartas += "\nEl Usuario tiene: " + this.cantidadCartas + " cartas";
         return cartas;
+    }
+
+    public void mostrarCartasOrdenadas(){
+        cartas.entrySet().stream()
+                .sorted(Map.Entry.<String, Integer>comparingByValue())
+                .limit(8861)
+                .forEach(System.out::println); // or any other terminal method
     }
 
     public void agregarCartas(Map cartas){
@@ -56,6 +63,7 @@ public class Usuario<E> {
     public String mostrarTipoCarta(String nombre) {
         return (String) cartas.get(nombre);
     }
+
 
 
 

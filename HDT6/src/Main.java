@@ -82,14 +82,23 @@ public class Main {
             else if(seleccion.equals("3")){
 
                System.out.println(usuario.mostrarCartas());
-
-
+                System.out.println("El usuario tiene: " + usuario.getCantidadCartas() + " cartas");
             }
-            /*
-            for (int i = 0; i < cartas.length; i++) {
-                System.out.println(cartas[i].getKey() + " - " + cartas[i].getValue());
+            else if(seleccion.equals("4")){
+                usuario.mostrarCartasOrdenadas();
             }
-            System.out.println("Existen: " + cartas.length);*/
+
+            else if(seleccion.equals("5")){
+                for (int i = 0; i < cartas.length; i++) {
+                    System.out.println(cartas[i].getKey() + " - " + cartas[i].getValue());
+                }
+                System.out.println("Existen: " + cartas.length+"cartas");
+            }
+
+            else if(seleccion.equals("6")){
+                
+            }
+
         }
     }
 }
