@@ -42,6 +42,9 @@ public class Usuario<E> {
     }
 
     public void agregarCartas(Map cartas){
+        this.monstruos = 0;
+        this.trampa = 0;
+        this.hechizos = 0;
         this.cartas = cartas;
         int contador = 0;
         int contador2 = 0;
@@ -63,6 +66,7 @@ public class Usuario<E> {
         }
 
         this.cantidadCartas = cartas.size();
+
     }
 
     public void setCantidadCartas(){

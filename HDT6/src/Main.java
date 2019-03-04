@@ -42,14 +42,17 @@ public class Main {
         //Se llama a nuestro factory para cada caso de Map
         if(mapaSeleccionado.equals("1")){
             cartasUsuario = factory.getMap("HashMap");
+            cartasTotal = factory.getMap("HashMap");
         }else if(mapaSeleccionado.equals("2")){
             cartasUsuario = factory.getMap("TreeMap");
+            cartasTotal = factory.getMap("TreeMap");
         }else if(mapaSeleccionado.equals("3")){
             cartasUsuario = factory.getMap("Linked");
+            cartasTotal = factory.getMap("Linked");
         }else{
             return;
         }
-        cartasTotal = cartasUsuario;
+
         for (int i = 0; i < archivo.length; i++) {
             cartasTotal.put(cartas[i].getKey(), cartas[i].getValue());
             //Se le van a agregando  al usuario cartas
