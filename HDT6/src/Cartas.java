@@ -6,14 +6,25 @@ Estructura de Datos
 
 import java.io.*;
 import java.util.*;
-
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.TreeMap;
 //Objeto Cartas
 //Se crean los sets y gets para las llaves y valores que este tendrá
 public class Cartas {
 
     //Atributo
-    private String value;
     private String key;
+    private String value;
+    private int quantity;
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     public String getValue() {
         return value;
@@ -23,11 +34,11 @@ public class Cartas {
         this.value = value;
     }
 
-    public String getKey() {
-        return key;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
-    public void setKey(String key) {
-        this.key = key;
+    public int getQuantity() {
+        return quantity;
     }
 }
