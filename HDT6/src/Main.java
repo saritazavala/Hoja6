@@ -67,79 +67,91 @@ public class Main {
             System.out.println("6.Mostrar el nombre y tipo de todas las cartas existentes, ordenadas por tipo");
             System.out.println("7. Mostar elementos para profiler");
             System.out.println("8. Salir");
-        try {
 
 
-            String seleccion = leer.nextLine();
-            boolean existe = false;
-            //Booleano para ciclo
 
-            //Si la opcion es la 1
-            if (seleccion.equals("1")) {
-                System.out.println("Ingrese la carta");
-                String ingreso = leer.nextLine();
-                for (Cartas carta : cartas) {
-                    if (carta.getKey().equals(ingreso)) {
-                        existe = true;
-                        cartasUsuario.put(carta.getKey(), carta.getValue());
-                        usuario.agregarCartas(cartasUsuario);
+
+            try {
+
+
+                String seleccion = leer.nextLine();
+                boolean existe = false;
+                //Booleano para ciclo
+
+                //Si la opcion es la 1
+                if (seleccion.equals("1")) {
+                    System.out.println("Ingrese la carta");
+                    String ingreso = leer.nextLine();
+                    for (int i = 0; i < cartas.length; i++) {
+                        if (cartas[i].getKey().equals(ingreso)) {
+                            existe = true;
+                            cartasUsuario.put(cartas[i].getKey(), cartas[i].getValue());
+                            usuario.agregarCartas(cartasUsuario);
+                            usuario.agregarCartas(cartas[i]);
+                            break;
+                        }
+                    }
+                    if (existe == false) {
+                        System.out.println("La carta no existe, no puede ser agregada");
                     }
                 }
-                if (!existe) {
-                    System.out.println("La carta no existe, no puede ser agregada");
+
+
+                //Si la opcion es la 2
+                else if (seleccion.equals("2")) {
+                    System.out.println("Ingrese la carta que desea saber el tipo: ");
+                    String carta = leer.nextLine();
+                    System.out.println(usuario.mostrarTipoCarta(carta));
                 }
-            }
-            //Si la opcion es la 2
-            else if (seleccion.equals("2")) {
-                System.out.println("Ingrese la carta que desea saber el tipo: ");
-                String carta = leer.nextLine();
-                System.out.println(usuario.mostrarTipoCarta(carta));
-            }
-            //Si la opcion es la 3
-            else if (seleccion.equals("3")) {
+                //Si la opcion es la 3
+                else if (seleccion.equals("3")) {
 
-                System.out.println(usuario.mostrarCartas());
-                System.out.println("El usuario tiene: " + usuario.getCantidadCartas() + " cartas");
-                System.out.println(usuario.getCantidadTiposCartas());
+                    System.out.println(usuario.mostrarCartas());
+                    System.out.println(usuario.getCantidadTiposCartas());
+                    System.out.println(usuario.cartasRepetidasToString());
 
-            }
-            //Si la opcion es la 4
-            else if (seleccion.equals("4")) {
-                usuario.mostrarCartasOrdenadas();
-                System.out.println(usuario.getCantidadTiposCartas());
-            }
-
-            //Si la opcion es la 5
-            else if (seleccion.equals("5")) {
-                for (Cartas carta : cartas) {
-                    System.out.println(carta.getKey() + " - " + carta.getValue());
                 }
-                System.out.println("Existen: " + cartas.length + "cartas");
-            }
-            //Si la opcion es la 6
-            else if (seleccion.equals("6")) {
-                cartasTotal.entrySet().stream()
-                        .sorted(Map.Entry.comparingByValue())
-                        .limit(8861)
-                        .forEach(System.out::println);
-                System.out.println("Existen: " + cartas.length + " Cartas");
-            }
-            //Si la opcion es la 7
-            else if (seleccion.equals("7")) {
-                MostrarElementosProfiler.mostrarElementos(cartasTotal);
-            }
-            //Si la opcion es la 8
-            else if (seleccion.equals("8")) {
-                break; //Salir
-            }
+                //Si la opcion es la 4
+                else if (seleccion.equals("4")) {
+                    System.out.println("El usuario tiene: " + "" + usuario.getCantidadCartas() + "cartas en el Map del usuario");
+                    usuario.mostrarCartasOrdenadas();
+                    System.out.println(usuario.getCantidadTiposCartas());
+                    System.out.println(usuario.cartasRepetidasToString());
 
+                }
+
+                //Si la opcion es la 5
+                else if (seleccion.equals("5")) {
+                    for (Cartas carta : cartas) {
+                        System.out.println(carta.getKey() + " - " + carta.getValue());
+                    }
+                    System.out.println("Existen: " + cartas.length + "cartas");
+                }
+                //Si la opcion es la 6
+                else if (seleccion.equals("6")) {
+                    cartasTotal.entrySet().stream()
+                            .sorted(Map.Entry.comparingByValue())
+                            .limit(8861)
+                            .forEach(System.out::println);
+                    System.out.println("Existen: " + cartas.length + " Cartas");
+                }
+                //Si la opcion es la 7
+                else if (seleccion.equals("7")) {
+                    MostrarElementosProfiler.mostrarElementos(cartasTotal);
+                }
+                //Si la opcion es la 8
+                else if (seleccion.equals("8")) {
+                    break; //Salir
+                }
+            }catch (Exception e){
+                System.out.println("Ingrese una opcion disponible");
+            }
         }
-        catch (Exception e){
-            System.out.println("Ingrese una opcion disponible");
-        }
+
         }
     }
-}
+
+
 
 
 /*
